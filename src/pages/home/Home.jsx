@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
 
@@ -16,9 +17,9 @@ export const Home = () => {
         <span className='smalltext'>BREWIN&apos; HERE&reg; </span>
         <br />
         <br />
-        <button className='btn'>ORDER NOW</button>
+        <Link to='/menu'> <button className='btn'>ORDER NOW</button> </Link>
       </div>
-    <div className='img'><img className='image' src='https://i.ibb.co/YT6fGw1/Starbucks-Coffee-removebg-preview.png' /></div>
+    <div className='img'><img className='image' src='https://i.ibb.co/YT6fGw1/Starbucks-Coffee-removebg-preview.png' alt='img'/></div>
   </div>
   </>
   )

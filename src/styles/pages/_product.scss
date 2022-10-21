@@ -3,9 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw ;
     background: linear-gradient(90deg, white 50%, $primary-color 50%);
+    overflow: hidden;
 }
 
 .product-desc {
@@ -34,7 +35,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            & span {
+            & button {
                 background-color: rgb(183, 183, 183);
                 padding: 8px;
                 border-radius: 30px;
@@ -42,6 +43,9 @@
             }
             & p {
                 margin-top: 5px;
+            }
+            &-selected {
+                color: $primary-color;
             }
         }
 
@@ -67,10 +71,12 @@
 
     &-button {
         margin-top: 100px;
+        text-align: center;
         & button {
             background-color: $primary-color;
             border-radius: 15px;
             padding: 20px;
+            margin: 10px;
         }
     }
 }
@@ -81,4 +87,12 @@
     justify-content: center;
     width: 100px;
     height: 100px;
+}
+
+.adds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
 }

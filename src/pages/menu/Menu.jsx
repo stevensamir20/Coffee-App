@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { BaseURL } from '../../shared/API'
 import { useState } from 'react'
+import { useContext } from 'react'
+import CartContext from '../../store/cart-context'
 
 export const Menu = () => {
 
+  const cartContext = useContext(CartContext)
   const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
@@ -16,6 +19,17 @@ export const Menu = () => {
    })
   
   },)
+
+  const addToCart = (item) => {
+    cartContext.addItem({
+      id: item.id,
+      size: 'SMALL',
+      description: `${item.name} - Sugar: NONE - With Toppings: NONE`,
+      price: +item.price ,
+      sugar: 'NONE',
+      image: item.image
+    })
+  }
   
   return (
     <div className="container">
@@ -26,12 +40,12 @@ export const Menu = () => {
             <img src={drink.image} alt="coffee-pic" />
           </div>
           <div className="product-card-desc">
-            <h3>
+            <h5>
               <Link to={`/menu/${drink.id}`}>{drink.name}</Link>
               <span>{drink.price}</span>
-            </h3>
+            </h5>
             <div className="add-button">
-              <button className="add-button-cart">
+              <button onClick={() => {addToCart(drink)}}className="add-button-cart">
                 <FontAwesomeIcon icon={faPlus} className="add-button-icon"/>
               </button>
             </div>
