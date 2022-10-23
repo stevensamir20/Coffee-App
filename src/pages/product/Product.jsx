@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BaseURL } from '../../shared/API'
 import { useParams } from 'react-router-dom'
@@ -13,12 +13,13 @@ export const Product = () => {
   const [ toppings, setToppings ] = useState([])
   const [ drinkSize, setSize ] = useState({size: 'SMALL', sizePrice: 0})
   const [ topping, setTopping ] = useState({name: 'NONE', price: 0})
+  const [ order, setOrder ] = useState(false)
   const sugarRef = useRef()
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios.get(BaseURL + `products/${drinkId}`).then((res) => {
       setDrink(res.data)
-
       if(res.data.hasToppings){
         axios.get(BaseURL + `toppings`).then((res) => {
           setToppings(res.data)
@@ -38,7 +39,8 @@ export const Product = () => {
       sugar: sugarRef.current.value,
       image: item.image
     })
-    alert('added to cart')
+   
+    setOrder(true);
   }
 
   const sizeChanger = (size) => {
@@ -51,6 +53,11 @@ export const Product = () => {
     if (size === 3) {
       setSize({size: 'LARGE',sizePrice: 20})
     } 
+  }
+
+  const checkout = (drink) => {
+    addToCart(drink)
+    navigate('/cart')
   }
 
   const handleTopping = (e) => {
@@ -110,7 +117,8 @@ export const Product = () => {
           <div className="sizes-button">
             <h3>Price: {drinkSize.sizePrice + +drink.price + topping.price}</h3>
             <button onClick={() => {addToCart(drink)}}>ADD TO BAG</button>
-            <Link to='/cart'><button>CHECKOUT</button></Link>
+            <button onClick={() => {checkout(drink)}}>BUY IT NOW</button>
+            {order && <h4>Added to Cart!</h4>}
           </div>
         </div>
         <div className='adds'>
@@ -137,7 +145,7 @@ export const Product = () => {
         </div>
       </div>
      </>
-    ) : ( <h1>no product found</h1> ) }
+    ) : ( <h1>Loading Product</h1> ) }
     </>
   )
 }

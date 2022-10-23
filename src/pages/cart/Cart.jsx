@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { BaseURL } from '../../shared/API';
 import CartContext from '../../store/cart-context'
@@ -10,6 +10,8 @@ export const Cart = () => {
   const cartContext = useContext(CartContext);
   const totalAmount = cartContext.totalAmount
   const cartEmpty = cartContext.items.length > 0;
+  const [ success, setSuccess ] = useState(false)
+
 
   const removeFromCart = (item) => {
     cartContext.removeItem(item)
@@ -20,6 +22,7 @@ export const Cart = () => {
   };
 
   const placeOrder = () => {
+    setSuccess(true)
     axios.post( (BaseURL + 'orders'),  config, {items: cartContext.items})
     .then((res) => {
       console.log(res);
@@ -86,7 +89,9 @@ export const Cart = () => {
           </div>
           <div className="cart-price-btn">
             <button disabled={!cartEmpty} onClick={() => {placeOrder()}}>Place Order</button>
+            {success && <h4 style={{marginLeft: "15px"}}>Order placed!</h4>}
           </div>
+         
         </div>
     </div>
   )
