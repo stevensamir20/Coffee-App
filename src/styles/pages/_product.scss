@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     &-title{
         font-family: 'Poppins'; 
         font-style: normal;
@@ -33,7 +34,6 @@
         line-height: 60px;
         text-align: center;
         color: #5E5E5E;
-
     }
 
     &-cups {
@@ -105,12 +105,11 @@
             margin: 10px;
             font-family: 'Poppins';
             font-style: normal;
-           font-weight: 400;
-           font-size: 18px;
-           line-height: 27px;
-           align-items: center;
-           color: #767676;
-
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            align-items: center;
+            color: #767676;
         }
     }
 }
@@ -122,8 +121,6 @@
     width: 100px;
     height: 100px;
     color: #767676;
-
-
 }
 
 .adds {

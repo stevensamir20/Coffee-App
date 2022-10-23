@@ -22,7 +22,6 @@ export const Navbar = () => {
       <ul>
         <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'home-style' : 'site-style')}>Home</NavLink></li>
         <li><NavLink to="/menu" className={({ isActive }) => (isActive ? 'home-style' : 'site-style')}>Menu</NavLink></li>
-        <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'home-style' : 'site-style')}>About</NavLink></li> 
         <li><NavLink to="/cart" className={({ isActive }) => (isActive ? 'home-style' : 'site-style')}>Cart</NavLink></li> 
       </ul>
       { isLoggedIn ? 

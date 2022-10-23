@@ -20,7 +20,6 @@ export const Cart = () => {
   };
 
   const placeOrder = () => {
-    console.log(cartContext.items);
     axios.post( (BaseURL + 'orders'),  config, {items: cartContext.items})
     .then((res) => {
       console.log(res);

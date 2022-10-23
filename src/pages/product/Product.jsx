@@ -30,7 +30,6 @@ export const Product = () => {
   
   const addToCart = (item) => {
     const sugarAmount = sugarRef.current.value;
-    console.log(sugarAmount);
     cartContext.addItem({
       productId: item.id,
       size: drinkSize.size,

@@ -1,9 +1,8 @@
 .cart-product {
     display: grid;
     grid-template-columns: 60% 40%;
-    height: 100%;
-    overflow: hidden;
-   
+    height: calc(100% - 75px);
+    width: 100%;
 }
 .cart-items {
     display: flex;
@@ -70,7 +69,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    width: 40%;
     background-color: $primary-color;
+    position: fixed;
+    right: 0;
 
     &-total {
         padding: 50px;

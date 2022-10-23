@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { CartRoute, LoginRoute } from "./routes/PrivateRoutes";
 
 import { Home } from "./pages/home/Home";
-import { About } from "./pages/about/About";
 import { Menu } from "./pages/menu/Menu";
 import { Cart } from "./pages/cart/Cart";
 import { NotFound } from "./pages/not-found/NotFound";
@@ -20,16 +19,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="menu" element={<Menu />} />
         <Route path="menu/:drinkId" element={<Product />} />
-
         <Route element={<CartRoute />}>
           <Route path="cart" element={<Cart />} /> 
         </Route>
-
         <Route element={<LoginRoute />}>
           <Route path="login" element={<LoginPage />} />
         </Route>
-
-        <Route path="about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
