@@ -31,11 +31,11 @@ export const Login = () => {
     <div className="auth-form-container">
         <form className="login-form" onSubmit={handleLogin}>
             <label htmlFor="username" className="form-label"></label>
-            <input  className="form-input" ref={userRef} type="text" placeholder="Username" id="username" name="username" />
+            <input  className="form-input" ref={userRef} type="text" placeholder="Username" id="username" name="username" required minLength={3}/>
             <label htmlFor="password" className="form-label"></label>
-            <input className="form-input" ref={pwdRef} type="password" placeholder="Password" id="password" name="password" />
+            <input className="form-input" ref={pwdRef} type="password" placeholder="Password" id="password" name="password" required minLength={8}/>
             <button className="log-btn">SIGN IN</button>
-            <a href="/" className="forget-pass">Forget Password</a>
+            <span className="forget-pass">Forget Password</span>
         </form>
     </div>
   )

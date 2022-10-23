@@ -42,9 +42,9 @@ export const Register = () => {
             <label htmlFor="last name" className="form-label"></label>
             <input className="form-input" ref={lastNameRef} name="name" id="name" placeholder="Last Name" />
             <label htmlFor="text" className="form-label"></label>
-            <input className="form-input" ref={userRef} type="text" placeholder="Username" id="username" name="username" />
+            <input className="form-input" ref={userRef} type="text" placeholder="Username" id="username" name="username" required minLength={3}/>
             <label htmlFor="password" className="form-label"></label>
-            <input className="form-input" ref={pwdRef} type="password" placeholder="Password" id="password" name="password" />
+            <input className="form-input" ref={pwdRef} type="password" placeholder="Password" id="password" name="password" minLength={8} required/>
             <button className="log-btn">SIGN UP</button>
         </form>
     </div>
