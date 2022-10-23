@@ -19,7 +19,7 @@ export const Home = () => {
         <br />
         <Link to='/menu'> <button className='btn'>ORDER NOW</button> </Link>
       </div>
-    <div className='img'><img className='image' src='https://i.ibb.co/YT6fGw1/Starbucks-Coffee-removebg-preview.png' alt='img'/></div>
+    <div ><img className='circle-img-coffe' src='https://i.ibb.co/YT6fGw1/Starbucks-Coffee-removebg-preview.png' alt='img'/></div>
   </div>
   </>
   )

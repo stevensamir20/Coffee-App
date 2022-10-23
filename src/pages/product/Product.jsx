@@ -29,10 +29,12 @@ export const Product = () => {
   }, [])
   
   const addToCart = (item) => {
+    const sugarAmount = sugarRef.current.value;
+    console.log(sugarAmount);
     cartContext.addItem({
-      id: item.id,
+      productId: item.id,
       size: drinkSize.size,
-      description: `${drinkSize.size} - ${item.name} - Sugar: ${sugarRef.current.value} - With Toppings: ${topping.name}`,
+      description: `${item.name} - Sugar: ${sugarAmount.charAt(0).toUpperCase() + sugarAmount.slice(1).toLowerCase()} - ${topping.name === 'NONE' ? '':`Toppings: ${topping.name}`}`,
       price: +item.price + drinkSize.sizePrice + topping.price,
       sugar: sugarRef.current.value,
       image: item.image
@@ -125,7 +127,7 @@ export const Product = () => {
             <div className="adds-in">
               <h3>Add-Ins</h3>
               <select name="toppings" id="toppings" onChange={(event) => {handleTopping(event)}}>
-                <option value="No Toppings 0">None</option>
+                <option value="None 0">None</option>
                 {toppings.map((item) => {
                   return ( 
                   <option value={`${item.name} ${item.price}`} key={item.id}>{item.name} - LE {item.price}</option>)

@@ -20,6 +20,7 @@ export const Cart = () => {
   };
 
   const placeOrder = () => {
+    console.log(cartContext.items);
     axios.post( (BaseURL + 'orders'),  config, {items: cartContext.items})
     .then((res) => {
       console.log(res);
@@ -45,9 +46,15 @@ export const Cart = () => {
             return (
               <div className="cart-items-card" key={item.description}>
                 <div className="cart-items-card-amount">
-                  <h5>{item.description}</h5>
+                  <div>
+                  { item.description.split('-').map((item) => {
+                    return (<h5>{item}</h5>)})
+                  }
+                  </div>
                   <div className="cart-items-card-amount-control">
-                    <h6>{item.size}</h6>
+                    <h6>
+                      {item.size.charAt(0).toUpperCase() + item.size.slice(1).toLowerCase()}
+                    </h6>
                   </div>
                   <h6>EGP {item.price}</h6>
                 </div>

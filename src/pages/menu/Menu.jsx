@@ -22,9 +22,9 @@ export const Menu = () => {
 
   const addToCart = (item) => {
     cartContext.addItem({
-      id: item.id,
+      productId: item.id,
       size: 'SMALL',
-      description: `${item.name} - Sugar: NONE - With Toppings: NONE`,
+      description: `${item.name}`,
       price: +item.price ,
       sugar: 'NONE',
       image: item.image

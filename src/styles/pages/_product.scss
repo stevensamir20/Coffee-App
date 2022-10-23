@@ -25,6 +25,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    &-title{
+        font-family: 'Poppins'; 
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        color: #5E5E5E;
+
+    }
 
     &-cups {
         margin-top: 50px;
@@ -35,17 +45,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            text-align: center;
+            color: #767676;
+
             & button {
-                background-color: rgb(183, 183, 183);
+                
                 padding: 8px;
-                border-radius: 30px;
                 margin-top: 10px;
+                background: #D9D9D9;
+                border-radius: 50px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
             }
             & p {
                 margin-top: 5px;
             }
             &-selected {
-                color: $primary-color;
+                color: #767676;
             }
         }
 
@@ -72,11 +96,21 @@
     &-button {
         margin-top: 100px;
         text-align: center;
+        
         & button {
             background-color: $primary-color;
+            border: none;
             border-radius: 15px;
             padding: 20px;
             margin: 10px;
+            font-family: 'Poppins';
+            font-style: normal;
+           font-weight: 400;
+           font-size: 18px;
+           line-height: 27px;
+           align-items: center;
+           color: #767676;
+
         }
     }
 }
@@ -87,6 +121,9 @@
     justify-content: center;
     width: 100px;
     height: 100px;
+    color: #767676;
+
+
 }
 
 .adds {
@@ -94,5 +131,29 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 60px;
+ 
+    &-sugar{
+     font-family: 'Poppins';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 23px;
+     line-height: 34px;
+     color: #5D5D5D;
+
+     &-menu{
+         height: 80px;
+         width: 360px;
+         font-family: 'Poppins';
+         font-style: normal;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 27px;
+         color: #5E5E5E;
+         text-align: center;
+         background: rgba(255, 255, 255, 0.88);
+         border: 1px solid rgba(94, 94, 94, 0.25);
+         border-radius: 10px;
+     }
+   }
 }

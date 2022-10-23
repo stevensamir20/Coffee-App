@@ -1,5 +1,8 @@
+.menucontainer{
+    background-image: url(https://htmlcolors.com/color-image/c1e1c1.png);
+}
 .product-card {
-    margin: 25px 10px 10px 10px;
+    margin: 25px 25px 10px 25px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -7,13 +10,17 @@
     height: 355px;
     width: 255px;
     border-radius: 10px;
-    background-color: $primary-color;
+    background-color: #FFFFFF;
     display: inline-block;
+   
 
     &-img {
         display: flex;
         width: 100%;
         height: 255px;
+        background-color: #EDF6ED;
+        border-top-left-radius: 10px;
+        border-top-right-radius:10px;
         & img {
             margin: auto;
             width: 100%;
@@ -26,9 +33,14 @@
         grid-template-columns: auto 70px;
         width: 100%;
         padding-left: 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: #FFFFFF;
+       
         
         & span {
             display: block;
+            
         }
     }
 }

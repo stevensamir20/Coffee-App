@@ -1,48 +1,51 @@
 .circle{
-    z-index: -10;
-    position: absolute;
-    top: 0;
-    right: 0;  
-    height: 450px;
-    width: 1000px;
-    border-radius: 0 0 700px 700px;
-    background-color: $primary-color ;
+   z-index: -10;
+   position: absolute;
+   top: 0;
+   right: 0;  
+   height: 450px;
+   width: 1000px;
+   border-radius: 0 0 700px 700px;
+   background-color: $primary-color ;
 }
 
 .grid-container{
-   display: grid;
-   grid-template-columns: repeat(2,1fr);
-   grid-template-rows: auto;
-   gap: 100px 100px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  gap: 100px 100px;
 }
 
 .text{
-   padding-top: 280px;
-   padding-left: 100px;
+  padding-top: 230px;
+  padding-left: 100px;
 }
 
 .smalltext {
-   color: $dark-color;
-   font-size: 35px;
+  color: rgb(110, 110, 110);
+  font-size: 35px;
+  font-family: cursive;
 }
 
 .largetext {
-   color: rgb(69, 198, 105);
-   font-size: 50px;
+  color: rgb(132, 185, 147);
+  font-size: 50px;
+  font-family: cursive;
 }
+
 
 .btn{
-   font-size: 20px;
-   border-radius: 50px;
-   height: 50px;
-   width: 150px;
-   background-color: $primary-color;
-   color: $dark-color;
+  font-size: 20px;
+  border-radius: 50px;
+  height: 50px;
+  width: 150px;
+  background-color: rgb(132, 185, 147);
+  color:  white;
 }
 
-.image{
-   padding-top: 150px;
-   padding-right: 200px;
-   height: 400px;
-   width: 270px;
+.circle-img-coffe{
+  padding-top: 120px;
+  padding-right: 200px;
+  height: 540px;
+  width: 800px;
 }
